@@ -160,8 +160,7 @@ Commands:
    
 FROM_DIR defaults to ~ and TO_DIR defaults to ~/.dotfiles.
    """
-
-if __name__ == "__main__":
+def main():
     try:
         ACTION = sys.argv[1]
     except IndexError:
@@ -202,3 +201,7 @@ if __name__ == "__main__":
         else:
             print usage()
             sys.exit(2)
+
+if __name__ == "__main__":
+    main()
+    

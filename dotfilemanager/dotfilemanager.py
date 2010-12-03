@@ -11,6 +11,9 @@ try:
 except KeyError:
     HOSTNAME = platform.node()
 HOSTNAME_SEPARATOR = '__'
+
+# List of Files to skip
+SKIPFILES = ['README.txt']
     
 def tidy(d,report=False):
     """Find and delete any broken symlinks in directory d.
@@ -47,7 +50,7 @@ def get_target_paths(to_dir,report=False):
     filenames = os.listdir(to_dir)
     for filename in filenames:
         path = os.path.join(to_dir,filename)
-        if filename.endswith('~'):
+        if filename.endswith('~') or filename in SKIPFILES:
             if report:
                 print 'Skipping %s' % filename
             continue            

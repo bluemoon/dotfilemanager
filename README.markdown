@@ -90,3 +90,12 @@ hostname will be different each time you switch computers but you want
 to use the same config files whenever you login to this account. So just
 make up a name for the account and set it as the value of
 `DOTFILEMANAGER_HOSTNAME`.
+
+Tip: exclude files with SKIPFILES variable
+------------------------------------------
+
+If you want some files in FROM_DIR *not* to be linked to TO_DIR, just add
+the *complete* filename to the SKIPFILES variable add the top of
+the dotfilemanager.py file.
+TODO: add support for regex
+TODO: move skip-definitions to an external file
